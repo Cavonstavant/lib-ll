@@ -53,3 +53,12 @@ dkms.conf
 
 # Cmake related files
 build/
+CMakeFiles/
+*.cmake
+CMakeCache.txt
+Makefile
+
+
+# IDE related files
+.vscode/
+.idea/
