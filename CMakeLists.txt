@@ -9,7 +9,9 @@ src/node/CRUD/update.c
 src/node/cmp_node.c
 src/list/CRUD/create.c
 src/list/CRUD/delete.c
-src/list/CRUD/update.c)
+src/list/CRUD/update.c
+src/queue/queue.c
+src/stack/stack.c)
 
 add_library(ll ${SRC})
 
