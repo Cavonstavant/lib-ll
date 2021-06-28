@@ -40,7 +40,7 @@ void delete_list(list_t *list);
 
 /* src/list/CRUD/read.c */
 size_t get_list_size(list_t *list);
-node_t *get_node_at(list_t *list, node_t *node, const int index);
+node_t *get_node_at(list_t *list, const int index);
 node_t *get_node_by_data(list_t *list,
                         const void *data,
                         int (*cmp)(void *ref, void *data));
@@ -51,6 +51,10 @@ size_t update_list_size(list_t *list, const size_t new_size);
 #define increment_list_size(list) (update_list_size(list, get_list_size(list) + 1))
 list_t *sort_list(list_t *list);
 size_t list_index_of(list_t *list, node_t *node, int (*cmp)(void *, void *));
+
+/* src/list/CRUD/delete.c */
+void delete_list(list_t *list);
+void delete_node_at(list_t *list, int index);
 
 
 #endif /* LL_H */
