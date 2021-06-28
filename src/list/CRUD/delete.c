@@ -36,6 +36,7 @@ void delete_node_at(list_t *list, int index)
         free(tmp);
         return;
     }
+    decrement_list_size(list);
     return (delete_inside(list, index));
 }
 

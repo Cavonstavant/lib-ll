@@ -49,6 +49,7 @@ node_t *get_node_by_data(list_t *list,
 list_t *insert_at(list_t *list, node_t *node, const int index);
 size_t update_list_size(list_t *list, const size_t new_size);
 #define increment_list_size(list) (update_list_size(list, get_list_size(list) + 1))
+#define decrement_list_size(list) (update_list_size(list, get_list_size(list) - 1))
 list_t *sort_list(list_t *list);
 size_t list_index_of(list_t *list, node_t *node, int (*cmp)(void *, void *));
 
