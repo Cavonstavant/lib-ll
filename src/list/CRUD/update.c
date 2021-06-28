@@ -9,6 +9,20 @@ size_t update_list_size(list_t *list, const size_t new_size)
     return (new_size);
 }
 
+static list_t *insert_inside(list_t *list, node_t *node, const int index)
+{
+    node_t *tmp = list->head;
+    node_t *stock = NULL;
+
+    for (int i = 0; tmp->next && i < index; i++){
+        stock = tmp;
+        tmp = tmp->next;
+    }
+    stock->next = node;
+    node->next = tmp;
+    return (list);
+}
+
 /**
 * @brief insert given node at index
 * 
@@ -20,6 +34,7 @@ size_t update_list_size(list_t *list, const size_t new_size)
 list_t *insert_at(list_t *list, node_t *node, const int index)
 {
     node_t *tmp;
+    int starting_from_end;
 
     if (!list)
         return (NULL);
@@ -30,6 +45,11 @@ list_t *insert_at(list_t *list, node_t *node, const int index)
         increment_list_size(list);
         return (list);
     }
-    tmp = (index > list->size / 2) ? list->tail : list->head;
-    //TODO see if we need to traverse the LL backward or foreward then insert
+    if (index == 0){
+        node->next = list->head;
+        list->head = node;
+        increment_list_size(list);
+        return (list);
+    }
+    return (insert_inside(list, node, index));
 }

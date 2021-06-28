@@ -8,11 +8,11 @@
 * @param index 
 * @return node_t* - the node found in list, NULL if not found
 */
-node_t *get_node_at(list_t *list, node_t *node, const int index)
+node_t *get_node_at(list_t *list, const int index)
 {
     node_t *tmp;
 
-    if (!list || !node || index < 0)
+    if (!list || index < 0)
         return (NULL);
     if (index >= list->size)
         return (NULL);
