@@ -42,7 +42,7 @@ void delete_list(list_t *list);
 size_t get_list_size(list_t *list);
 node_t *get_node_at(list_t *list, const int index);
 node_t *get_node_by_data(list_t *list,
-                        const void *data,
+                        void *data,
                         int (*cmp)(void *ref, void *data));
 
 /* src/list/CRUD/update.c */
