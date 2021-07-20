@@ -32,5 +32,4 @@ foreach(src_file ${TEST_SRC})
     target_link_libraries(${file_name} criterion ll)
 endforeach()
     
-
 include_directories(include)
