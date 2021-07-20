@@ -35,7 +35,7 @@ node_t *get_node_at(list_t *list, const int index)
 */
 node_t *get_node_by_data(list_t *list,
 void *data,
-int (*cmp)(void *ref, void *data))
+int (*cmp)())
 {
     if (!list)
         return (NULL);
